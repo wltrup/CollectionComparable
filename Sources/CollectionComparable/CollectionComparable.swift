@@ -1,11 +1,12 @@
 import Foundation
 
-/// This isn't sufficient. Concrete types conforming to Collection who want to be
-/// Comparable still need to declare conformance to Comparable. That's because
-/// Collection is a *protocol*, not a concrete type, and protocols can't be extended
+/// This isn't sufficient. Concrete types conforming to `Collection` who want to be
+/// `Comparable` still need to declare conformance to `Comparable`. That's because
+/// `Collection` is a *protocol*, not a concrete type, and protocols can't be extended
 /// to add conformances to other protocols, ie, we can't say
-/// "extension Collection: Comparable where Element: Comparable { ... }"
-
+///
+/// `extension Collection: Comparable where Element: Comparable { ... }`
+///
 public extension Collection where Element: Comparable {
 
     static func < (lhs: Self, rhs: Self) -> Bool {
